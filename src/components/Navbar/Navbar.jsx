@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="nav">
          
          <div className="logo">
-           <h1 className="logotext">Trident Jewelerry</h1>
+           <h1 className="logotext">Trident Jewelers.</h1>
          </div>
         
         <div className="links">
