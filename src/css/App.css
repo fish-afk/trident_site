@@ -1,0 +1,19 @@
+.flexer{
+    display: flex;
+}
+
+.spaceplease{
+    margin-left: 1rem;
+    color: aqua;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.guide{
+    background: -webkit-linear-gradient(#eee, rgb(163, 228, 172), rgb(3, 210, 238));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+
