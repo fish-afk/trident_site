@@ -1,0 +1,289 @@
+
+/* THis file is only for styling the website.html page specifically*/
+
+html{
+    font-family: -apple-system, BlinkMacSystemFont,
+     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif;
+
+    background: linear-gradient(0deg, rgb(217, 175, 217) 0%, rgb(151, 217, 225) 50%, rgb(226, 223, 185) 100%);
+    background-repeat: no-repeat; 
+    
+    scroll-behavior: smooth;
+}
+
+.nav {
+    width: 100%;
+    background-color: black;
+    color:aliceblue;
+    display: flex;
+    
+}
+
+.logo{
+    display: flex;
+    width: 100%;
+    margin-left: 20px;
+    
+}
+
+.logotext {
+    font-size: 1.5rem;
+    background: -webkit-linear-gradient(#eee, rgb(163, 228, 172), rgb(3, 210, 238));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mover{
+    background-repeat: no-repeat;
+    animation: movinger 1s linear infinite;
+    
+}
+
+@keyframes movinger {
+
+    from{
+        transform: rotateY(0deg);
+    }
+
+    to{
+        transform: rotateY(360deg);
+    }
+    
+}
+.link{
+    text-decoration: none;
+    margin-right: 3vw;
+    margin-top: 30px;
+    color: white;
+    font-size: 1em;
+    
+}
+.checkbtn {
+    width: 30px;
+    height: 5px;
+    background-color: aqua;
+    display: none;
+    margin-top: 5px;
+}
+
+.links {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+@media screen and (min-width: 0px) and (max-width:900px) {
+    .nav{
+       text-align: center;
+       display: block;
+       
+    }
+
+    a{
+        position: relative;
+        text-align: center;
+    }
+
+    .links{
+        display: block;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .logo{
+        margin-left: 0px;
+        justify-content: center;
+    }
+
+    .BOX{
+        width: auto;
+        height: auto;
+    }
+
+    #r1e{
+        width: 100%;
+        height: 100%;
+    }
+
+    #r2e {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mover{
+        display: none;
+    }
+
+
+}  
+
+
+#check{
+    display: none;
+}
+
+
+
+
+.hover:hover{
+    color: aqua;
+    text-decoration: underline;
+    transition: all 4s;
+}
+
+.BOX{
+    margin: 70px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+#r1e{
+    border: 1px solid rgb(255, 255, 255);
+    animation: moving 5s linear infinite;
+    transition: all 1s;
+}
+
+#r2e {
+    border: 1px solid rgb(251, 255, 0);
+    animation: moving 5s linear infinite;
+    transition: all 1s;
+}
+
+
+.flex{
+    background-color: rgb(0, 32, 58);
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+    border: solid;
+    margin-top: 20px;
+    border: 1px solid blue;
+}
+
+
+@keyframes moving {
+  from{
+      border: 1px solid yellow;
+  }    
+  50%{
+      border: 1px solid blue;
+  }
+
+  to{
+      border: 1px solid green
+  }
+}
+
+.description{
+    margin-top: 1rem;
+    background-color: black;
+    width: auto;
+    height: auto;
+    color: aliceblue;
+    text-align: center;
+    padding: 2rem;
+    
+}
+
+.rings-bracelets{
+    margin-top: 3rem;
+    display: flex;
+    
+}
+
+.rings div{
+    padding-left: 20px;
+    text-align: start;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.block{
+    background-color: black;
+    color: aliceblue;
+    border: solid white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 30px
+}
+
+#socials{
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: black;
+    color: aliceblue;
+
+}
+
+ .fa {
+     padding: 20px;
+     font-size: 30px;
+     width: 50px;
+     text-align: center;
+     text-decoration: none;
+ }
+
+ .fa:hover {
+     opacity: 0.7;
+ }
+
+ /* Facebook */
+ .fa-facebook {
+     
+     color: white;
+ }
+
+ /* Others */
+ .fa-others {
+     padding-top: 29px;
+     color: white;
+ }
+
+
+ .socials-logos{
+     display: flex;
+     width: 100%;
+     justify-content: start;
+ }
+
+ #guide{
+     padding-top: 22px;
+ }
+
+ #bodytxt{
+     font-size: 1.5rem;
+ }
+
+ @media screen and (min-width: 0px) and (max-width:1000px) {
+     .rings-bracelets{
+         display: block;
+     }
+
+     #socials{
+         display: block;
+     }
+
+     #braca{
+         margin-left: 47vw ;
+     }
+ }
+
+.final{
+    margin-right: 1.5rem;
+    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    
+}
+
+
