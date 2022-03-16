@@ -5,9 +5,9 @@ import {GiBigDiamondRing} from 'react-icons/gi';
 
 export default function Navbar() {
   return (
-    <nav className="nav">
+    <nav className="navbar">
          
-        <div className="logo">
+        <div className="logoer">
           <h1 className="logotext">Trident Jewelers. <GiBigDiamondRing/> </h1>
         </div>
       
@@ -15,7 +15,7 @@ export default function Navbar() {
         <Links uri="/" content="Home" />
         <Links uri="/Products" content="Products"/>
         <Links uri="/Contactus" content="Contact_us"/>
-        <Links uri="/MyAccount" content="Account"/>
+        <Links uri="/Dashboard" content="Account"/>
         <Links uri="/Cart" content="Cart"/>
         </div>
         

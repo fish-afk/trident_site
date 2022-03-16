@@ -13,7 +13,7 @@ html{
     text-transform: uppercase;
 }
 
-.nav {
+.navbar {
     width: 100%;
     background-color: #1b1f23;
     color:aliceblue;
@@ -21,15 +21,16 @@ html{
     
 }
 
-.logo{
+.logoer{
     display: flex;
-    width: 100%;
     margin-left: 20px;
+    
     
 }
 
 .logotext {
-    font-size: 1.5rem;
+    margin-top: 4px;
+    font-size: 1.3rem;
     color: aqua;
 }
 
@@ -55,7 +56,7 @@ html{
     margin-right: 3vw;
     margin-top: 30px;
     color: white;
-    font-size: 1em;
+    font-size: 0.8rem;
     
 }
 .checkbtn {
@@ -67,8 +68,8 @@ html{
 }
 
 .links {
+    margin-bottom: 15px;
     display: flex;
-    width: 100%;
     justify-content: end;
 }
 
@@ -90,7 +91,7 @@ html{
         margin-bottom: 30px;
     }
 
-    .logo{
+    .logoer{
         margin-left: 0px;
         justify-content: center;
     }
@@ -186,7 +187,8 @@ html{
 
 .description::before{
     content: "";
-    background-image: url("../Assets/3d-render-falling-gold-diamonds-footage-140301199_iconl.jpg");
+    background-image: url("https://media.istockphoto.com/photos/two-golden-sapphire-earrings-with-small-diamonds-picture-id954397602?k=20&m=954397602&s=612x612&w=0&h=U9IKX8qwMdwDMOEhq0emuMqgkxlj77K4Fi4KdWCRXU8=");
+    background-size: cover;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -264,7 +266,7 @@ html{
  }
 
  #bodytxt{
-     font-size: 1.5rem;
+     font-size: 1rem;
  }
 
  @media screen and (min-width: 0px) and (max-width:1000px) {
@@ -296,6 +298,11 @@ html{
     display: flex;
     justify-content: end;
     
+}
+
+#root{
+    background: linear-gradient(0deg, rgb(241, 241, 241) 0%, rgb(151, 217, 225) 50%, rgb(218, 217, 214) 100%);
+    background-repeat: no-repeat; 
 }
 
 

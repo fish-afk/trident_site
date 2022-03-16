@@ -6,7 +6,7 @@ export default function Item(props) {
 
     <React.Fragment>
 
-      <div class="card">
+      <div class="carder">
         <img src={props.img_src} width="90%" height="65%"/>
         <p>{props.name}</p>
         <button>Add to cart</button>

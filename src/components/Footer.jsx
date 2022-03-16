@@ -9,7 +9,7 @@ export default function Footer() {
             <p><a className="footerlinks" href="">- Meet us</a></p>
             <p><a className="footerlinks" href="">- Where we are located</a></p>
             <p><a className="footerlinks" href="">- About us</a></p>
-            <p><a className="footerlinks" href="">- Our pricing patters</a></p>
+            <p><a className="footerlinks" href="">- Our pricing patterns</a></p>
             <p><a className="footerlinks" href="">- Customer support</a></p>
 
 
@@ -31,7 +31,7 @@ export default function Footer() {
           <form className="newsletter">
             <p className="footerguide"> Subscribe to our weekly newsletter </p>
             <input type="email" className="" placeholder="Email"></input>
-            <button type="submit">Subscribe</button>
+            <button type="submit" id="sub">Subscribe</button>
           </form>
 
 

@@ -21,27 +21,36 @@ export default function Products_Main() {
     <section id="products">
 
     <h1>Rings</h1>
-    <div id="Rings" className="container bg-weird">
+    <div id="Rings" className="containers bg-weird">
       <Item img_src={ring1} name="tobefilled" description="tobefilled" />
       <Item img_src={ring2} name="tobefilled" description="tobefilled" />
       <Item img_src={ring3} name="tobefilled" description="tobefilled" />
-      <Item img_src={ring4} name="tobefilled" description="tobefilled" />
-      <Item img_src={ring5} name="tobefilled" description="tobefilled" />
-      <Item img_src={ring6} name="tobefilled" description="tobefilled" />
+      
     </div> 
 
+    <div id="Rings" className="containers bg-weird">
+    <Item img_src={ring4} name="tobefilled" description="tobefilled" />
+      <Item img_src={ring5} name="tobefilled" description="tobefilled" />
+      <Item img_src={ring6} name="tobefilled" description="tobefilled" />
+
+    </div>
+
     <h1>Necklaces</h1>
-    <div id="Necklaces" className="container bg-dark">
+    <div id="Necklaces" className="containers bg-dark">
 
       <Item img_src={Necklace1} name="tobefilled" description="tobefilled" />
       <Item img_src={Necklace2} name="tobefilled" description="tobefilled" />
       <Item img_src={Necklace3} name="tobefilled" description="tobefilled" />
-      <Item img_src={Necklace4} name="tobefilled" description="tobefilled" />
-      <Item img_src={Necklace5} name="tobefilled" description="tobefilled" />
-      <Item img_src={Necklace6} name="tobefilled" description="tobefilled" />
+      
 
 
     </div>
+
+    <div id="Necklaces" className="containers bg-dark">
+    <Item img_src={Necklace4} name="tobefilled" description="tobefilled" />
+      <Item img_src={Necklace5} name="tobefilled" description="tobefilled" />
+      <Item img_src={Necklace6} name="tobefilled" description="tobefilled" />
+      </div>
     </section>
 
    </React.Fragment>
