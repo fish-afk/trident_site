@@ -10,10 +10,10 @@
 }
 
 .guide{
-    background: -webkit-linear-gradient(#eee, rgb(163, 228, 172), rgb(3, 210, 238));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: aqua;
     
 }
 
-
+.card{
+    color: aqua;
+}

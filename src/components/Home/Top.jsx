@@ -17,21 +17,6 @@ export default function Top() {
 </div>
 </section>
 
-<div class='flex'>
-    
-
-    <div class='BOX'>
-         <img id="r1e" width="50%" height="90%" src={image1} alt="image1"></img>
-    </div>
-
-    <div class='BOX'>
-        <img id="r2e" width="50%" height="90%" src={image3} alt="image1"/>
-    </div>
-
-   
-
-</div>
-
     </React.Fragment>
   )
 }

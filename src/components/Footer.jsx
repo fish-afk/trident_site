@@ -1,35 +1,42 @@
-import React from 'react'
+import React from 'react';
 
 export default function Footer() {
   return (
-    <div>
-        
-            <section id="socials">
+    <React.Fragment>
 
-                
+        <div className="maindiv">
+          <div className="col1 cols">
+            <p><a className="footerlinks" href="">- Meet us</a></p>
+            <p><a className="footerlinks" href="">- Where we are located</a></p>
+            <p><a className="footerlinks" href="">- About us</a></p>
+            <p><a className="footerlinks" href="">- Our pricing patters</a></p>
+            <p><a className="footerlinks" href="">- Customer support</a></p>
 
-        <div class="socials-logos">
-        <h1 id="guide">Our socials: </h1>
-        <a href="https://facebook.com" target="_blank" class="fa fa-facebook"><img width="100%" 
-        src="/images/index.png"/></a>
-        <a href="https://instagram.com" target="_blank" class="fa fa-others"><img width="100%" 
-        src="/images/index.jpeg"/></a>
 
-        <a href="https://twitter.com" target="_blank" class="fa fa-others"><img width="100%" 
-        src="/images/images.png"/></a>
+          </div>
 
-        <a href="https://whatsapp.com" target="_blank" class="fa fa-others"><img width="80%" 
-        src="/images/wp.png"/></a>
+          <div className="col2 cols">
+          <p><a className="footerlinks" href="">- Policies</a></p>
+            <p><a className="footerlinks" href="">- Terms of service</a></p>
+            <p><a className="footerlinks" href="">- Conditions</a></p>
+            <p><a className="footerlinks" href="">- Misc</a></p>
+            <p><a className="footerlinks" href="">- Payment methods</a></p>
+            <p><a className="footerlinks" href="">- API</a></p>
+            <p><a className="footerlinks" href="">- Refund policies</a></p>
+            <p><a className="footerlinks" href="">- Privacy</a></p>
+
+
+          </div>
+
+          <form className="newsletter">
+            <p className="footerguide"> Subscribe to our weekly newsletter </p>
+            <input type="email" className="" placeholder="Email"></input>
+            <button type="submit">Subscribe</button>
+          </form>
+
+
 
         </div>
-
-
-
-        <div class="final">
-            <footer>&copy; Copyright all rights reserved</footer>
-        </div>
-        </section>
-                
-    </div>
+    </React.Fragment>
   )
 }

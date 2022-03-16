@@ -2,19 +2,20 @@
 /* THis file is only for styling the website.html page specifically*/
 
 html{
-    font-family: -apple-system, BlinkMacSystemFont,
+    font-family: 'Poppins', BlinkMacSystemFont,
      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
 
-    background: linear-gradient(0deg, rgb(217, 175, 217) 0%, rgb(151, 217, 225) 50%, rgb(226, 223, 185) 100%);
+    background: linear-gradient(0deg, rgb(241, 241, 241) 0%, rgb(151, 217, 225) 50%, rgb(218, 217, 214) 100%);
     background-repeat: no-repeat; 
     
     scroll-behavior: smooth;
+    text-transform: uppercase;
 }
 
 .nav {
     width: 100%;
-    background-color: black;
+    background-color: #1b1f23;
     color:aliceblue;
     display: flex;
     
@@ -29,9 +30,7 @@ html{
 
 .logotext {
     font-size: 1.5rem;
-    background: -webkit-linear-gradient(#eee, rgb(163, 228, 172), rgb(3, 210, 238));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: aqua;
 }
 
 .mover{
@@ -123,9 +122,6 @@ html{
     display: none;
 }
 
-
-
-
 .hover:hover{
     color: aqua;
     text-decoration: underline;
@@ -133,13 +129,11 @@ html{
 }
 
 .BOX{
-    margin: 70px;
+    margin-top: 1rem;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
-    
-    
 }
 
 #r1e{
@@ -161,7 +155,6 @@ html{
     display: flex;
     justify-content: center;
     margin-top: 1px;
-    
 }
 
 
@@ -180,13 +173,26 @@ html{
 
 .description{
     margin-top: 1rem;
-    background-color: black;
     width: auto;
     height: auto;
-    color: aliceblue;
+    background-color:#1b1f23;
+    color: #ffffff;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
+    height: 500px;
+    position: relative;
     
+}
+
+.description::before{
+    content: "";
+    background-image: url("../Assets/3d-render-falling-gold-diamonds-footage-140301199_iconl.jpg");
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
 }
 
 .rings-bracelets{
@@ -204,7 +210,7 @@ html{
 }
 
 .block{
-    background-color: black;
+    background-color: #1b1f23;
     color: aliceblue;
     border: solid white;
     font-size: 1.5rem;
@@ -217,7 +223,7 @@ html{
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: black;
+    background-color: #1b1f23;
     color: aliceblue;
 
 }
@@ -264,6 +270,14 @@ html{
  @media screen and (min-width: 0px) and (max-width:1000px) {
      .rings-bracelets{
          display: block;
+     }
+
+     .description{
+         background-image: none;
+     }
+
+     #bodytxt{
+         font-size: 10px;
      }
 
      #socials{
