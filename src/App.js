@@ -6,7 +6,6 @@ import Cart_main from './components/Cart/Main';
 import Contactus_main from './components/Contactus/Main';
 import Products_Main from './components/Products/Main';
 import Signup from "../src/components/Account/components/Signup"
-import { Container } from "react-bootstrap"
 import { AuthProvider } from "../src/components/Account/contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Dashboard from "../src/components/Account/components/Dashboard"
@@ -21,9 +20,13 @@ import "./css/App.css";
 import "./css/Body.css"
 import "./css/Main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {QueryClient, QueryClientProvider} from "react-query";
+import {ReactQueryDevtools} from "react-query/devtools";
 
+const queryClient = new QueryClient();
 export default function App() {
 
+  
   const options = {
     // you can also just use 'bottom center'
     position: positions.TOP_CENTER,
@@ -35,24 +38,28 @@ export default function App() {
 
   return (
    <React.Fragment>
-    <AlertProvider template={AlertTemplate} {...options}>
-    <Navbar/>
-    <AuthProvider>
-      <Route exact path="/" component={Main_Home}/>
-      <Route exact path="/Products" component={Products_Main}/>
-      <Route exact path="/Contactus" component={Contactus_main}/>
-      <Route exact path="/MyAccount" component={Account_main}/>
-      <Route exact path="/Cart" component={Cart_main}/>
-      <PrivateRoute exact path="/Dashboard" component={Dashboard} />
-      <PrivateRoute path="/update-profile" component={UpdateProfile} />
-      <Route path="/signup" component={Signup} />
-      <Route path="/login" component={Login} />
-      <Route path="/forgot-password" component={ForgotPassword} />
-    </AuthProvider>
-      
-    <Footer/>
-    </AlertProvider>
+      <AlertProvider template={AlertTemplate} {...options}>
+        <QueryClientProvider client={queryClient}>
 
+        <AuthProvider>
+          <Navbar/>
+            <Route exact path="/" component={Main_Home}/>
+            <Route exact path="/Products" component={Products_Main}/>
+            <Route exact path="/Contactus" component={Contactus_main}/>
+            <Route exact path="/MyAccount" component={Account_main}/>
+            <Route exact path="/Cart" component={Cart_main}/>
+            <PrivateRoute exact path="/Dashboard" component={Dashboard} />
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+          <Footer/>
+        </AuthProvider>
+          
+        
+        <ReactQueryDevtools/>
+        </QueryClientProvider>
+      </AlertProvider>
     </React.Fragment>
   )
 

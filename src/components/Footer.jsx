@@ -1,4 +1,7 @@
 import React from 'react';
+import {ImInstagram} from "react-icons/im"
+import {AiOutlineFacebook} from "react-icons/ai"
+import {FiTwitter} from "react-icons/fi"
 
 export default function Footer() {
   return (
@@ -35,7 +38,12 @@ export default function Footer() {
           </form>
 
 
-
+          <div className="cols forth">
+            
+            <a className="socialsmargin"><ImInstagram/></a>
+            <a id="fbbb" className="socialsmargin"><AiOutlineFacebook/></a>
+            <a className="socialsmargin"><FiTwitter /></a>
+          </div>
         </div>
     </React.Fragment>
   )
