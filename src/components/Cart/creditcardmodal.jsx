@@ -1,90 +1,96 @@
 import React from 'react'
 import { useCart } from 'react-use-cart';
-
+import { useAuth } from "../Account/contexts/AuthContext";
+import UserDataService from "../../Http/Userdataservie"
+import {useAlert} from "react-alert"
 
 export default function Creditcardmodal() {
-const {
-    isEmpty,
-    totalUniqueItems,
-    items,
-    totalItems,
-    cartTotal,
-    updateItemQuantity,
-    removeItem,
-    emptyCart,
-    } = useCart();
+
+  const {currentUser} = useAuth();
+  const alert = useAlert();
+  const htmlForm = document.getElementById("billing-info")
+
+
+  function checkFinalAuth(){
+    if(currentUser == null || currentUser == undefined || currentUser == ""){
+      window.location.href = "/login";
+        alert.error("Please sign in or sign up first!");
+    }
+    return;
+  }
+
+  async function place_order(){
+    let data = {}
+    let order = JSON.parse(localStorage.getItem("react-use-cart"));
+    let items = [...order.items];
+
+    let dated_items = [];
+
+    for(let i = 0; i< items.length; i++){
+      items[i]["date"] = new Date();
+      items[i]["order_status"] = "pending";
+      items[i]["delivery_date"] = new Date();
+
+      dated_items.push(items[i]);
+    }
+
+    data["orders"] = dated_items;
+    data["uid"] = currentUser.uid;
+    
+    await UserDataService.post_Order(data).then((res) => {
+      console.log(res)
+      emptyCart()
+      alert.show("Order placed successfully!")
+    }).catch((error) => {
+      console.log(error);
+    });
+
+  }
+
+  const btn_logic = () => {
+    return( cartTotal <= 0? <h1 className="guide text-success">Nothing to pay for : ) </h1>: <button type="submit" onClick={place_order} style={{width:"20vw", background: "aqua"}}>PAY ${cartTotal}</button>
+          );
+  }
+
+
+  const {
+      isEmpty,
+      totalUniqueItems,
+      items,
+      totalItems,
+      cartTotal,
+      updateItemQuantity,
+      removeItem,
+      emptyCart,
+  } = useCart();
+
+
   return (
       
     <React.Fragment>
-        
-        <div className="container bg-secondary mt-5">
-        <h4 className="guide2 text-warning" style={{textDecoration: "underline"}}>Billing information</h4>
-    <div className='row'>
-        <div className='col-md-4'></div>
-        <div className='col-md-4'>
-          <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
-          <form accept-charset="UTF-8" action="/" className="require-validation" data-cc-on-file="false" data-stripe-publishable-key="pk_bQQaTxnaZlzv4FnnuZ28LFHccVSaj" id="payment-form" method="post"><div style={{margin:0,padding:0,display:"inline"}}><input name="utf8" type="hidden" value="✓" /><input name="_method" type="hidden" value="PUT" /><input name="authenticity_token" type="hidden" value="qLZ9cScer7ZxqulsUWazw4x3cSEzv899SP/7ThPCOV8=" /></div>
-            <div className='form-row'>
-              <div className='col-xs-12 form-group required'>
-                <label className='control-label'>Name on Card</label>
-                <input className='form-control' size='90' type='text'/>
-              </div>
-            </div>
-            <div className='form-row'>
-              <div className='col-xs-12 form-group card required'>
-                <label className='control-label'>Card Number</label>
-                <input autoComplete='off' className='form-control card-number' size='90' type='text'/>
-              </div>
-            </div>
-            <div className='form-row'>
-              <div className='col-xs-4 form-group cvc required'>
-                <label className='control-label'>CVC</label>
-                <input autoComplete='off' className='form-control card-cvc' placeholder='ex. 311' size='4' type='text'/>
-              </div>
-              <div className='col-xs-4 form-group expiration required'>
-                <label className='control-label'>Expiration</label>
-                <input className='form-control card-expiry-month' placeholder='MM' size='2' type='text'/>
-              </div>
-              <div className='col-xs-4 form-group expiration required'>
-                <label className='control-label'> </label>
-                <input className='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'/>
-              </div>
-            </div>
-            <div>
-            <input autoComplete='off' className='form-control card-number mt-3'
-             placeholder="Address Line 1" size='90' type='text'/>
-            <input autoComplete='off' className='form-control card-number mt-3'
-             placeholder="Address Line 2" size='90' type='text'/>
-            <input autoComplete='off' className='form-control card-number mt-3 mb-3'
-             placeholder="Postal code" size='90' type='text'/>
-             <input autoComplete='off' className='form-control card-number mt-3 mb-3'
-             placeholder="City" size='90' type='text'/>
-            </div>
-            <div className='form-row'>
-              <div className='col-md-12'>
-                <div className='form-control total bg-info'>
-                  Total:
-                  <span className='amount'>${cartTotal}</span>
-                </div>
-              </div>
-            </div>
-            <div className='form-row'>
-              <div className='col-md-12 form-group'>
-                <button className='form-control btn btn-primary submit-button' type='submit'>Pay »</button>
-              </div>
-            </div>
-            <div className='form-row'>
-              <div className='col-md-12 error form-group hide'>
-                <div className='alert-danger alert'>
-                  Please correct the errors and try again.
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div className='col-md-4'></div>
-    </div>
-</div>
+        {checkFinalAuth()}
+        <form className="container bg-dark mt-5 p-5 creditcard" id="billing-info">
+        <center><h1 className="guide">Billing information</h1></center>
+          <center>
+          <div className="card my-4">
+            <label htmlFor="card-number">Card number</label>
+            <input required id="nameoncard" type="text" min="20"></input>
+            <label htmlFor="nameoncard">Name on Card</label>
+            <input required id="ad1"></input>
+            <label htmlFor="ad1">Address line 1</label>
+            <input required id="ad2"></input>
+            <label htmlFor="ad2">Address line 2</label>
+            <input required id="city"></input>
+            <label htmlFor="city">City</label>
+            <input required id="postalcode"></input>
+            <label htmlFor="postalcode">Postal code</label>
+            <input required id="card-number"></input>
+          
+          </div>
+          </center>
+          <center>{btn_logic()}</center>
+          <center><h3 className="guide mt-4">ordered items will be delivered to this billing address</h3></center>
+        </form>
 
 
 

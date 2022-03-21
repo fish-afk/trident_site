@@ -52,7 +52,7 @@ export default function Item(props) {
       
       <div className="card col-4 mt-4">
         <span><img src={props.img_src} width="50%"className="prods mt-4" style={{border: "1px solid aqua"}}/>
-        <p className="mt-3 text-success">{props.name}</p></span>
+        <p className="mt-3 text-success">{props.name}</p><p className="text-success">${props.price}</p></span>
         
         <p>{props.description}</p>
         <center><button onClick={Addtocart} className="mb-3 addtocartbtn">Add to cart</button></center>

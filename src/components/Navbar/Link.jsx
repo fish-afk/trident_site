@@ -9,7 +9,7 @@ export default function Links(props) {
   const {totalUniqueItems} = useCart();
   if(props.content == "Cart"){
     return(
-      <Link to={props.uri} id="cartlogo" className="link hover flexer"><span ><h5> <AiOutlineShoppingCart/>{totalUniqueItems
+      <Link to={props.uri} id="cartlogo" className="link hover flexer"><span ><h5 className="text-warning"> <AiOutlineShoppingCart className="mx-1"/>{totalUniqueItems
       }</h5></span>
     <div className="spaceplease">|</div>
     </Link>

@@ -34,7 +34,7 @@ export default function Cart() {
       if(authie == false){
         
         window.location.href = "/login"
-        setTimeout(() => 10000, alert.error("Please sign in or sign up first!"))
+        alert.error("Please sign in or sign up first!")
         
       }
       

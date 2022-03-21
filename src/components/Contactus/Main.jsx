@@ -51,21 +51,21 @@ export default function Contactus_main() {
 
   return (
     <React.Fragment>
-       <div class="containerb">
+       <div className="containerb">
         <h1 className="guide2">Connect With Us</h1>
         <p>
             We would love to hear from you. Feel free to get in touch with us at anytime!
         </p>
-        <div class="contact-box">
-            <div class="contact-left">
+        <div className="contact-box">
+            <div className="contact-left">
                 <h3>Send Your Message :</h3>
                 <form>
-                    <div class="input-row">
-                        <div class="input-group1">
+                    <div className="input-row">
+                        <div className="input-group1">
                             <label>Name</label>
                             <input type="text" className="inputs" id="sender-name" placeholder="Your Name"/>
                         </div>
-                        <div class="input-group2">
+                        <div className="input-group2">
                             <label>Email</label>
                             <input type="text" className="inputs" id="sender-email" placeholder="youremail@example.com"/>
                         </div>
@@ -80,7 +80,7 @@ export default function Contactus_main() {
 
 
             </div>
-            <div class="contact-right">
+            <div className="contact-right">
                 <h3>Reach Us :</h3><br/>
 
                 <table>

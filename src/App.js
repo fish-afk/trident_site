@@ -24,7 +24,17 @@ import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import  privacy  from "./components/Info_text_pages/privacy_policies"
 import pricing_patterns from "./components/Info_text_pages/pricing_patterns"
+import Locations from "./components/Info_text_pages/Locations";
+import Paymentmethods from "./components/Info_text_pages/Paymentmethods";
+import Meet_us from "./components/Info_text_pages/Meet_us";
+import Customersupport from "./components/Info_text_pages/Customersupport";
+import API from "./components/Info_text_pages/API";
+import Aboutus from "./components/Info_text_pages/Aboutus";
+import Conditions from "./components/Info_text_pages/Conditions";
+import Refund_policies from "./components/Info_text_pages/Refund_policies";
+import TOS from "./components/Info_text_pages/TOS";
 import Creditcardmodal from './components/Cart/creditcardmodal';
+import Userorders from "./components/Account/components/userorders"
 
 const queryClient = new QueryClient();
 export default function App() {
@@ -42,7 +52,6 @@ export default function App() {
   return (
    <React.Fragment>
       <AlertProvider template={AlertTemplate} {...options}>
-        <QueryClientProvider client={queryClient}>
 
         <AuthProvider>
           <Navbar/>
@@ -59,15 +68,23 @@ export default function App() {
             <Route path="/privacy-policies" component={privacy} />
             <Route path="/pricingpatterns" component={pricing_patterns} />
             <Route path="/payment" component={Creditcardmodal} />
+            <Route path="/Termsofservice" component={TOS} />
+            <Route path="/Refunds" component={Refund_policies} />
+            <Route path="/Paymentmethods" component={Paymentmethods} />
+            <Route path="/Meetus" component={Meet_us} />
+            <Route path="/Locations" component={Locations} />
+            <Route path="/support" component={Customersupport} />
+            <Route path="/Conditions" component={Conditions} />\
+            <Route path="/API" component={API} />
+            <Route path="/Aboutus" component={Aboutus} />
+            <Route path="/user-orders" component={Userorders} />
+            
           <Footer/>
         </AuthProvider>
           
         
-        <ReactQueryDevtools/>
-        </QueryClientProvider>
+        
       </AlertProvider>
     </React.Fragment>
-  )
-
-  
+  );
 }

@@ -7,3 +7,4 @@ export default function Productdetails_page(props) {
     </div>
   )
 }
+

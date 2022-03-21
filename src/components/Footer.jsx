@@ -67,24 +67,23 @@ export default function Footer() {
           <i className="fa fa-bars"></i>
         </a>
           <div className="col1 cols">
-            <p><Link to=""><a className="footerlinks">- Meet us</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- Where we are located</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- About us</a></Link></p>
-            <p><Link to="/pricingpatterns"><a className="footerlinks">- Our pricing patterns</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- Customer support</a></Link></p>
+            <p><Link to="/Meetus" className="footerlinks">- Meet us</Link></p>
+            <p><Link to="Locations" className="footerlinks">- Where we are located</Link></p>
+            <p><Link to="Aboutus" className="footerlinks">- About us</Link></p>
+            <p><Link to="/pricingpatterns" className="footerlinks">- Our pricing patterns</Link></p>
+            <p><Link to="Support" className="footerlinks">- Customer support</Link></p>
 
 
           </div>
 
           <div className="col2 cols">
          
-          <p><Link to="/privacy-policies"><a className="footerlinks">- Privacy & Policies</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- Terms of service</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- Conditions</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- Misc</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- Payment methods</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- API</a></Link></p>
-            <p><Link to=""><a className="footerlinks">- Refund policies</a></Link></p>
+          <p><Link to="/privacy-policies" className="footerlinks">- Privacy & Policies</Link></p>
+            <p><Link to="Termsofservice" className="footerlinks">- Terms of service</Link></p>
+            <p><Link to="Conditions" className="footerlinks">- Conditions</Link></p>
+            <p><Link to="Paymentmethods" className="footerlinks">- Payment methods</Link></p>
+            <p><Link to="API" className="footerlinks">- API</Link></p>
+            <p><Link to="Refunds" className="footerlinks">- Refund policies</Link></p>
             
           </div>
 
