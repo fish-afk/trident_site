@@ -1,6 +1,9 @@
 import React from 'react';
 import Item from "./Item";
 import {useQuery} from "react-query"
+import Skeleton, {SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import {BsSearch} from "react-icons/bs"
 
 export default function Products_Main() {
   
@@ -15,11 +18,13 @@ export default function Products_Main() {
 
 
   if(status === "loading"){
-    return (<div>Loading...</div>);
+    return (<div><SkeletonTheme animation="wave" baseColor="#f5deb3" highlightColor="#888"><Skeleton amount={1} height="70vh"/>
+    <Skeleton /><Skeleton /> <Skeleton />
+   </SkeletonTheme></div>);
   }
 
   if(status === "error"){
-    return (<div>Error...</div>)
+    return (<div className="m-5 text-danger p-5"><center><h1>An error occurred while loading <br/> 404 error.</h1></center></div>)
   }
 
   return (
@@ -27,17 +32,20 @@ export default function Products_Main() {
 
     <section id="products">
 
-    <h2><center>Indulge into the finest of regalia</center></h2>
-    <div className="bg-weird">
-    <div id="Rings" className="container-fluid row text-center mt-5">
+    <span><h2 className="guide2"><center>Indulge into the finest of regalia</center></h2><center className="mb-2"><input className="product-search" placeholder="search"></input>
+    <button class="mx-4 px-3 btn-primary searchbtn"><BsSearch/></button>
+      </center></span>
+    <div className="bg-weird ms-5">
+    <div id="Rings" className="row text-center">
       {data.products.map((product, key) => (
-        <Item key={key} img_src={product.img_src} name={product.name} description={product.description}/>
+        <Item key={key} item={product} price={product.price["$numberInt"]} img_src={product.img_src} name={product.name} description={product.description}/>
       ))}
       
     </div> 
     </div>
 
     </section>
+    
 
    </React.Fragment>
   )

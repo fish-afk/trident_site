@@ -3,11 +3,12 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import { useAlert } from 'react-alert'
+import {FcGoogle} from "react-icons/fc"
 
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { login } = useAuth()
+  const { login, signInWithGoogle } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
@@ -19,12 +20,13 @@ export default function Login() {
     try {
       setError("")
       setLoading(true)
-      await login(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
-      alert.show('Logged in Successfully')
+      await login(emailRef.current.value, passwordRef.current.value).then(res=> {
+        alert.show('Logged in successfully!')
+        history.push("/Products")
+      }).catch((error) => setError("Failed to log in.\n" + error.message))
+      
     } catch {
-      alert.show('Failed to log in')
-      setError("Failed to log in")
+      setError("Failed to log in, Unexpected error")
     }
 
     setLoading(false)
@@ -38,17 +40,20 @@ export default function Login() {
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
+              <Form.Label className="text-white">Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label className="text-white">Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <center><Button disabled={loading} className="col-md-4" type="submit">
               Log In
-            </Button>
+            </Button></center>
           </Form>
+          <center><Button className="col-md-4 mt-4 bg-secondary" onClick={signInWithGoogle}>
+           <span>Sign in with google <FcGoogle className="fs-1 googleicon"/></span> 
+          </Button></center>
           <div className="w-100 text-center mt-3">
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>

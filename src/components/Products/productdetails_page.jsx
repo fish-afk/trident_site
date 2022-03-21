@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Aboutus() {
+export default function Productdetails_page(props) {
   return (
     <div className="container bg-dark">
-        <h1></h1>
+        <img src={props.img_src}/>
     </div>
   )
 }

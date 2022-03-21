@@ -6,9 +6,9 @@ body{
     background:#55ffe5;
     font-family: 'Noto Serif Display', serif;
 }
-.container{
+.containerb{
     width: 80%;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 .contact-box{
     background: wheat;

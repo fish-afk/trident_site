@@ -13,26 +13,6 @@ html{
     text-transform: uppercase;
 }
 
-.navbar {
-    width: 100%;
-    background-color: #1b1f23;
-    color:aliceblue;
-    display: flex;
-    
-}
-
-.logoer{
-    display: flex;
-    margin-left: 20px;
-    
-    
-}
-
-.logotext {
-    margin-top: 4px;
-    font-size: 1.3rem;
-    color: aqua;
-}
 
 .mover{
     background-repeat: no-repeat;
@@ -56,8 +36,6 @@ html{
     margin-right: 3vw;
     margin-top: 30px;
     color: white;
-    font-size: 0.8rem;
-    
 }
 .checkbtn {
     width: 30px;
@@ -67,34 +45,9 @@ html{
     margin-top: 5px;
 }
 
-.links {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: end;
-}
 
 @media screen and (min-width: 0px) and (max-width:900px) {
-    .nav{
-       text-align: center;
-       display: block;
-       
-    }
 
-    a{
-        position: relative;
-        text-align: center;
-    }
-
-    .links{
-        display: block;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-
-    .logoer{
-        margin-left: 0px;
-        justify-content: center;
-    }
 
     .BOX{
         width: auto;
@@ -174,7 +127,7 @@ html{
 
 .description{
     margin-top: 1rem;
-    width: auto;
+    width: 100%;
     height: auto;
     background-color:#1b1f23;
     color: #ffffff;
@@ -182,19 +135,21 @@ html{
     padding: 1rem;
     height: 500px;
     position: relative;
+    box-shadow: 10px 20px 10px 0px #b9c3ff;
     
 }
 
 .description::before{
     content: "";
-    background-image: url("https://media.istockphoto.com/photos/two-golden-sapphire-earrings-with-small-diamonds-picture-id954397602?k=20&m=954397602&s=612x612&w=0&h=U9IKX8qwMdwDMOEhq0emuMqgkxlj77K4Fi4KdWCRXU8=");
+    background-image: url("https://www.itl.cat/pngfile/big/307-3076451_wallpaper-jewelry-gold-bright-jewellery-wallpaper-hd.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.2;
+    opacity: 0.4;
 }
 
 .rings-bracelets{
@@ -212,8 +167,8 @@ html{
 }
 
 .block{
-    background-color: #1b1f23;
-    color: aliceblue;
+    background-color: wheat;
+    color: #1b1f23;
     border: solid white;
     font-size: 1rem;
     letter-spacing: 5px;
@@ -271,9 +226,7 @@ html{
  }
 
  @media screen and (min-width: 0px) and (max-width:1000px) {
-     .rings-bracelets{
-         display: block;
-     }
+    
 
      .description{
          background-image: none;
@@ -287,9 +240,7 @@ html{
          display: block;
      }
 
-     #braca{
-         margin-left: 47vw ;
-     }
+
  }
 
 .final{
@@ -306,4 +257,13 @@ html{
     background-repeat: no-repeat; 
 }
 
+@media screen and (max-width:600px) and (min-width:0px) {
+    .rings-bracelets{
+        display: block;
+    }
+
+    .braca{
+        width: 100%;
+    }
+}
 

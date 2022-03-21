@@ -2,43 +2,43 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import {useAlert} from "react-alert"
 
 export default function UpdateProfile() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  const { currentUser, updatePassword, updateEmail } = useAuth()
+  const { currentUser, updatePaassword, updateEemail } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
+  const alert = useAlert();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
     }
 
-    const promises = []
+    if (passwordRef.current.value.length < 7) {
+      return setError("PASSWORD IS too weak")
+    }
+    
     setLoading(true)
     setError("")
 
     if (emailRef.current.value !== currentUser.email) {
-      promises.push(updateEmail(emailRef.current.value))
+      await updateEemail(emailRef.current.value).then(res=> {
+        console.log(res)
+        alert.show(res.message)
+      }).catch((error) => setError(error.message))
     }
     if (passwordRef.current.value) {
-      promises.push(updatePassword(passwordRef.current.value))
+      await updatePaassword(passwordRef.current.value).then(res=> {
+        console.log(res)
+        alert.show(res.message)
+      }).catch((error) => setError(error.message))
     }
-
-    Promise.all(promises)
-      .then(() => {
-        history.push("/")
-      })
-      .catch(() => {
-        setError("Failed to update account")
-      })
-      .finally(() => {
-        setLoading(false)
-      })
   }
 
   return (

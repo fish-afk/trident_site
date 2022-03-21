@@ -3,7 +3,37 @@
     display: flex;
     width: 100%;
     background-color: #1b1f23;
-    box-shadow: 0px 15px 15px 20px rgba(28,0,181,0.3);
+    
+}
+.maindiv .icon{
+    display: none;
+}
+
+@media screen and (max-width:800px){
+    .maindiv .icon{
+        display: block;
+    }
+
+    .guide{
+        font-size: 1.3rem;
+    }
+
+
+    .guide2{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:400px){
+
+    .guide{
+        font-size: 1rem;
+    }
+
+
+    .guide2{
+        font-size: 1.5rem;
+    }
 }
 
 .col1{
@@ -20,8 +50,6 @@
     font-size: 0.9rem;
     margin-top: 40px;
     margin-bottom: 40px;
-    
-
 }
 
 a{
@@ -50,9 +78,30 @@ a{
 
 @media screen and (max-width:800px) and (min-width:0px) {
     .maindiv{
+        
+        height: 200vh;
         display: block;
     }
+
+    .cols{
+        float:left;
+        margin: 10px;
+        margin-left: 80px;
+        width: 100vw;
+    }
     
+    .newsletter{
+        display:block;
+        float:right;
+    }
+}
+
+@media screen and (max-width:500px){
+    .maindiv{
+        
+        height: 140vh;
+        
+    }
 }
 
 .footerguide{
@@ -73,7 +122,11 @@ a{
 
 }
 .bg-weird{
-    background-color: #1b1f23;
+    background-color: wheat;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 4rem;
+    padding-top: 5px;
 }
 
 
@@ -88,4 +141,29 @@ a{
         display:block;
     }
     
+}
+
+#marginsforproducts{
+    margin-left: 30px;
+}
+
+.flexertop{
+    display:flex;
+}
+
+.googleicon{
+    font-size: 2rem;
+}
+
+.infotexts{
+    color: wheat;
+    padding:60px;
+    margin-top: 3rem;
+    
+    
+}
+
+.heading{
+    color: aqua;
+    text-decoration: underline;
 }

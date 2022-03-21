@@ -5,8 +5,8 @@ import Center from "./Center"
 export default function Main_Home() {
   return (
     <div>
-        <Top/>
-        <Center/>
+        <div className="container-fluid"><Top/></div>
+        <div className="container-fluid"><Center/></div>
     </div>
   )
 }

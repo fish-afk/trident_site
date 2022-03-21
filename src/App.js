@@ -22,6 +22,9 @@ import "./css/Main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
+import  privacy  from "./components/Info_text_pages/privacy_policies"
+import pricing_patterns from "./components/Info_text_pages/pricing_patterns"
+import Creditcardmodal from './components/Cart/creditcardmodal';
 
 const queryClient = new QueryClient();
 export default function App() {
@@ -53,6 +56,9 @@ export default function App() {
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />
+            <Route path="/privacy-policies" component={privacy} />
+            <Route path="/pricingpatterns" component={pricing_patterns} />
+            <Route path="/payment" component={Creditcardmodal} />
           <Footer/>
         </AuthProvider>
           

@@ -13,10 +13,6 @@
     color: aqua;
     
 }
-
-.carder{
-    color: aqua;
-}
 .prods{
     box-shadow: 0px 5px 15px 0px rgb(161, 155, 194);
 }
@@ -47,3 +43,112 @@
     font-size: 2rem;
     margin-top: 80px;
 }
+
+
+.addtocartbtn{
+    border-radius: 10px;
+    background-color: #1b1f23;
+    color: wheat;
+    font-weight: bold;
+    width: 50%;
+}
+
+.product-search{
+    border-radius: 5px;
+    font-family: "Poppins";
+    text-transform: uppercase;
+    background-color: #1b1f23;;
+    color: wheat;
+}
+
+.searchbtn{
+    border-radius: 5px;
+    font-family: "Poppins";
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.topnav {
+    background-color: #1b1f23;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    display: flex;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.1s;
+    margin-bottom: 1rem;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgb(17, 15, 15);
+    color: aqua;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 840px) {
+    .topnav a {display: none;}
+    .spaceplease{display: none}
+    .logotext::before{content: "\a";white-space: pre;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+      margin-right: 20px;
+      margin-top: 10px;
+      padding-right: 15px;
+    }
+
+
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 840px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    #cartlogo{
+        margin-top: 100px;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+      margin-left: 10vw;
+    }
+  }
+
+
+
+.submit-button {
+margin-top: 10px;
+}
+.logotext {
+    float: left;
+    margin: 20px;
+    margin-top: 30px;
+    display: flex;
+    font-size: 1.3rem;
+    color: aqua;
+}
+
+
