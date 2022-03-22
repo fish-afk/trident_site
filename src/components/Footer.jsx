@@ -67,11 +67,11 @@ export default function Footer() {
           <i className="fa fa-bars"></i>
         </a>
           <div className="col1 cols">
-            <p><Link to="/Meetus" className="footerlinks">- Meet us</Link></p>
+            <p><Link to="/Meetus" className="footerlinks">- Meet our team</Link></p>
             <p><Link to="Locations" className="footerlinks">- Where we are located</Link></p>
             <p><Link to="Aboutus" className="footerlinks">- About us</Link></p>
             <p><Link to="/pricingpatterns" className="footerlinks">- Our pricing patterns</Link></p>
-            <p><Link to="Support" className="footerlinks">- Customer support</Link></p>
+            <p><Link to="Support" className="footerlinks">- Deliveries</Link></p>
 
 
           </div>
@@ -96,9 +96,10 @@ export default function Footer() {
 
           <div className="cols forth">
             
-            <a className="socialsmargin"><ImInstagram/></a>
-            <a id="fbbb" className="socialsmargin"><AiOutlineFacebook/></a>
-            <a className="socialsmargin"><FiTwitter /></a>
+            <a target="_blank" className="socialsmargin" href="https://www.instagram.com/instagram/"><ImInstagram/></a>
+            <a target="_blank" id="fbbb" href="https://web.facebook.com/search/top?q=facebook%20marketplace%20community" 
+            className="socialsmargin"><AiOutlineFacebook/></a>
+            <a target="_blank" href="https://twitter.com/Twitter" className="socialsmargin"><FiTwitter /></a>
           </div>
         </div>
     </React.Fragment>

@@ -9,7 +9,7 @@ export default function API() {
     </p>
     
     <h3>Endpoint for getting product data</h3>
-    <p>You can checkout https://data.mongodb-api.com/app/trident-jewels-xjpws/endpoint/getallproducts for geeting info about the main page of our products.</p>
+    <p>You can checkout https://data.mongodb-api.com/app/trident-jewels-xjpws/endpoint/getallproducts for getting info about the main page of our products.</p>
     </div>
   )
 }

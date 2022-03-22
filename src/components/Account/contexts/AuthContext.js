@@ -64,8 +64,24 @@ export function AuthProvider({ children }) {
     } )
   }
 
+  const deleteUserorderacc = (userid) => {
+    UserDataService.delete_Account(userid).then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      alert.show("error deleting user")
+    } )
+  }
+
   function login(email, password) {
     return signInWithEmailAndPassword(auth,email, password)
+  }
+
+  async function deleteuser() {
+    let UID = auth.currentUser.uid;
+    return auth.currentUser.delete().then((res) => {
+      deleteUserorderacc(UID)
+      alert.show("User deleted")
+    }).catch((err) => {alert.error('error deleting user\ntry relogging in')});
   }
 
   function logout() {
@@ -101,7 +117,8 @@ export function AuthProvider({ children }) {
     resetPassword,
     updateEemail,
     updatePaassword,
-    signInWithGoogle
+    signInWithGoogle,
+    deleteuser
   }
 
   return (

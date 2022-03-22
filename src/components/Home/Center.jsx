@@ -16,13 +16,13 @@ export default function Center() {
         </p>
         </div>
 
-        <img classNameName="braca" width="30%" height="50%" src={image2} alt="image1"/>
+        <img className="braca" width="30%" height="50%" src={image2} alt="image1"/>
         
     </section>
 
     <section className="rings-bracelets">
 
-           <img classNameName="braca" width="30%" height="50%" src={image4}alt="image1"/>
+           <img className="braca" width="30%" height="50%" src={image4}alt="image1"/>
 
            <div className="block" id="block2">
 

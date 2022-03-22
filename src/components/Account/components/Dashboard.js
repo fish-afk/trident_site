@@ -5,7 +5,7 @@ import { Link, useHistory } from "react-router-dom"
 
 export default function Dashboard() {
   const [error, setError] = useState("")
-  const { currentUser, logout } = useAuth()
+  const { currentUser, logout, deleteuser } = useAuth()
   const history = useHistory()
 
   async function handleLogout() {
@@ -33,6 +33,7 @@ export default function Dashboard() {
           <Link to="/users-orders" className="btn btn-primary w-100 mt-3">
             My orders.
           </Link>
+          <button type="button" className="btn btn-danger w-100 text-center mt-2" onClick={deleteuser}>Delete account</button>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">

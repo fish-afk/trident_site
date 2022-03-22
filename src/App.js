@@ -77,7 +77,7 @@ export default function App() {
             <Route path="/Conditions" component={Conditions} />\
             <Route path="/API" component={API} />
             <Route path="/Aboutus" component={Aboutus} />
-            <Route path="/user-orders" component={Userorders} />
+            <Route path="/users-orders" component={Userorders} />
             
           <Footer/>
         </AuthProvider>

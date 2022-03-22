@@ -19,7 +19,8 @@ export default function Creditcardmodal() {
     return;
   }
 
-  async function place_order(){
+  async function place_order(e){
+    e.preventDefault();
     let data = {}
     let order = JSON.parse(localStorage.getItem("react-use-cart"));
     let items = [...order.items];
@@ -42,7 +43,8 @@ export default function Creditcardmodal() {
       emptyCart()
       alert.show("Order placed successfully!")
     }).catch((error) => {
-      console.log(error);
+      alert.error("Order placed successfully!")
+      console.log(" occurred");
     });
 
   }
