@@ -13,9 +13,7 @@ export default function Contactus_main() {
         
         let KEYS = {
             
-            service_key: "service_fwni9q1",
-            template_key: "template_zmwgyxr",
-            user_key: "user_uBwPjYzKVYr2jLKE17pNV"
+            secret: "secret"
               
         }
 
